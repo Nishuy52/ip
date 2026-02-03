@@ -1,0 +1,43 @@
+todo borrow book
+deadline return book /by Sunday
+event project meeting /from Mon 2pm /to 4pm
+list
+mark 1
+mark 3
+list
+unmark 1
+list
+todo buy groceries
+deadline submit report /by Friday 5pm
+list
+
+todo
+deadline
+event
+todo read book
+deadline
+deadline assignment
+event party /from 8pm
+list
+mark
+mark abc
+mark -1
+mark 99
+mark 8
+unmark
+unmark 8
+list
+todo morning jog
+todo read chapter 5
+deadline eat potato /by Friday 11:59pm
+deadline pay bills /by next Monday
+event team meeting /from 2pm /to 3pm
+event birthday party /from Sat 7pm /to 10pm
+list
+mark 9
+mark 11
+mark 13
+list
+unmark 11
+list
+bye

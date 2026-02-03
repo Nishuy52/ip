@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.lang.Integer;
 public class Pippy {
-    static void main(String[] args) {
+    public static void main(String[] args) {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
@@ -11,47 +11,48 @@ public class Pippy {
                 " What can I do for you?\n";
         String bye =  " Bye. Hope to see you again soon!\n";
         String line = "____________________________________________________________\n";
-        Task[] task_list = new Task[100];
-        int task_count = 0;
+        final int MAX_TASKS = 100;
+        Task[] taskList = new Task[MAX_TASKS];
+        int taskCount = 0;
         Scanner input = new Scanner(System.in);
-        String input_line = "";
+        String inputLine = "";
         System.out.println(line + hello);
         while (true) {
             System.out.println(line);
-            input_line = input.nextLine();
-            if (input_line.equals("")) {
-                continue;
-            }
-
-            if  (input_line.equals("bye")) {
-                System.out.println(bye);
-                System.out.println(line);
-                return;
-            }
-
-            if (input_line.equals("list")) {
-                for (int i = 0; i < task_count; i++) {
-                    System.out.println((i+1) + "." + task_list[i].toString());
+            inputLine = input.nextLine();
+            switch (inputLine) {
+                case "" -> {
+                    continue;
                 }
-                continue;
+                case "bye" -> {
+                    System.out.println(bye);
+                    System.out.println(line);
+                    return;
+                }
+                case "list" -> {
+                    for (int i = 0; i < taskCount; i++) {
+                        System.out.println((i + 1) + "." + taskList[i].toString());
+                    }
+                    continue;
+                }
             }
 
-            if (input_line.startsWith("todo")) {
-                String[] components = input_line.split(" ", 2);
+            if (inputLine.startsWith("todo")) {
+                String[] components = inputLine.split(" ", 2);
                 if (components.length < 2) {
                     System.out.println("Give your task a name, you lazy buffoon" + System.lineSeparator() +
                             "Format: todo [task]");
                     continue;
                 }
-                task_list[task_count] = new Todo(components[1]);
+                taskList[taskCount] = new Todo(components[1]);
                 System.out.println("Added Todo:" + System.lineSeparator() +
-                        "   " + task_list[task_count].toString());
-                task_count++;
-                System.out.println("You now have " + task_count + " tasks in your list, unproductive waste of space");
+                        "   " + taskList[taskCount].toString());
+                taskCount++;
+                System.out.println("You now have " + taskCount + " tasks in your list, unproductive waste of space");
             }
 
-            if (input_line.startsWith("deadline")) {
-                String[] components = input_line.split(" ", 2);
+            if (inputLine.startsWith("deadline")) {
+                String[] components = inputLine.split(" ", 2);
                 if (components.length < 2) {
                     System.out.println("Give your task a name, you lazy buffoon" + System.lineSeparator() +
                             "Format: deadline [taskname] /by [datetime]");
@@ -63,15 +64,15 @@ public class Pippy {
                             "Format: deadline [taskname] /by [datetime]");
                     continue;
                 }
-                task_list[task_count] = new Deadline(nameAndDeadline[0], nameAndDeadline[1]);
+                taskList[taskCount] = new Deadline(nameAndDeadline[0], nameAndDeadline[1]);
                 System.out.println("Added Deadline:" + System.lineSeparator() +
-                        "   " + task_list[task_count].toString());
-                task_count++;
-                System.out.println("You now have " + task_count + " tasks in your list, unproductive waste of space");
+                        "   " + taskList[taskCount].toString());
+                taskCount++;
+                System.out.println("You now have " + taskCount + " tasks in your list, unproductive waste of space");
             }
 
-            if (input_line.startsWith("event")) {
-                String[] components = input_line.split(" ", 2);
+            if (inputLine.startsWith("event")) {
+                String[] components = inputLine.split(" ", 2);
                 if (components.length < 2) {
                     System.out.println("Give your event a name, you lazy buffoon" + System.lineSeparator() +
                             "Format: event [event] /from [datetime] /to [datetime]");
@@ -84,15 +85,20 @@ public class Pippy {
                     continue;
                 }
                 String[] timings = nameAndTime[1].split(" /to ", 2);
-                task_list[task_count] = new Event(nameAndTime[0], timings[0], timings[1]);
+                if (timings.length < 2) {
+                    System.out.println("There's a format for a reason smartass" + System.lineSeparator() +
+                            "Format: event [event] /from [datetime] /to [datetime]");
+                    continue;
+                }
+                taskList[taskCount] = new Event(nameAndTime[0], timings[0], timings[1]);
                 System.out.println("Added Event:" + System.lineSeparator() +
-                        "   " + task_list[task_count].toString());
-                task_count++;
-                System.out.println("You now have " + task_count + " tasks in your list, unproductive waste of space");
+                        "   " + taskList[taskCount].toString());
+                taskCount++;
+                System.out.println("You now have " + taskCount + " tasks in your list, unproductive waste of space");
             }
 
-            if (input_line.startsWith("mark") || input_line.startsWith("unmark")) {
-                String[] components = input_line.split(" ");
+            if (inputLine.startsWith("mark") || inputLine.startsWith("unmark")) {
+                String[] components = inputLine.split(" ");
                 if (components.length < 2) {
                     System.out.println("Invalid index, I need an index to refer to dumbass");
                     continue;
@@ -109,27 +115,21 @@ public class Pippy {
                     System.out.println("Invalid index, would you like to demonstrate what a negative index looks like? I didn't think so");
                     continue;
                 }
-                if  (index >= task_count) {
+                if  (index >= taskCount) {
                     System.out.println("Invalid index, you do not have that many tasks you lazy monkey");
                     continue;
                 }
-                if (input_line.startsWith("unmark")) {
-                    task_list[index].setUndone();
-                    System.out.println("Marked as Undone: " + task_list[index].toString());
+                if (inputLine.startsWith("unmark")) {
+                    taskList[index].setUndone();
+                    System.out.println("Marked as Undone: " + taskList[index].toString());
                     continue;
                 }
-                if (input_line.startsWith("mark")) {
-                    task_list[index].setDone();
-                    System.out.println("Marked as Done: " + task_list[index].toString());
+                if (inputLine.startsWith("mark")) {
+                    taskList[index].setDone();
+                    System.out.println("Marked as Done: " + taskList[index].toString());
                     continue;
                 }
             }
-            //task_list[task_count] = new Task(input_line);
-            //task_count++;
-
-            //System.out.println(line);
-            //System.out.println("added:" + input_line);
-            //System.out.println();
         }
     }
 

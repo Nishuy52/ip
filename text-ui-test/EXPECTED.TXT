@@ -1,7 +1,215 @@
-Hello from
- ____        _        
-|  _ \ _   _| | _____ 
-| | | | | | | |/ / _ \
-| |_| | |_| |   <  __/
-|____/ \__,_|_|\_\___|
+____________________________________________________________
+ Hello! I'm Pippy
+ What can I do for you?
+____________________________________________________________
 
+Added Todo:
+   [T][ ] borrow book
+You now have 1 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Deadline:
+   [D][ ] return book (by: Sunday)
+You now have 2 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Event:
+   [E][ ] project meeting (from: Mon 2pm to: 4pm)
+You now have 3 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+1.[T][ ] borrow book
+2.[D][ ] return book (by: Sunday)
+3.[E][ ] project meeting (from: Mon 2pm to: 4pm)
+____________________________________________________________
+
+Marked as Done: [T][X] borrow book
+____________________________________________________________
+
+Marked as Done: [E][X] project meeting (from: Mon 2pm to: 4pm)
+____________________________________________________________
+
+1.[T][X] borrow book
+2.[D][ ] return book (by: Sunday)
+3.[E][X] project meeting (from: Mon 2pm to: 4pm)
+____________________________________________________________
+
+Marked as Undone: [T][ ] borrow book
+____________________________________________________________
+
+1.[T][ ] borrow book
+2.[D][ ] return book (by: Sunday)
+3.[E][X] project meeting (from: Mon 2pm to: 4pm)
+____________________________________________________________
+
+Added Todo:
+   [T][ ] buy groceries
+You now have 4 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Deadline:
+   [D][ ] submit report (by: Friday 5pm)
+You now have 5 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+1.[T][ ] borrow book
+2.[D][ ] return book (by: Sunday)
+3.[E][X] project meeting (from: Mon 2pm to: 4pm)
+4.[T][ ] buy groceries
+5.[D][ ] submit report (by: Friday 5pm)
+____________________________________________________________
+
+____________________________________________________________
+
+Give your task a name, you lazy buffoon
+Format: todo [task]
+____________________________________________________________
+
+Give your task a name, you lazy buffoon
+Format: deadline [taskname] /by [datetime]
+____________________________________________________________
+
+Give your event a name, you lazy buffoon
+Format: event [event] /from [datetime] /to [datetime]
+____________________________________________________________
+
+Added Todo:
+   [T][ ] read book
+You now have 6 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Give your task a name, you lazy buffoon
+Format: deadline [taskname] /by [datetime]
+____________________________________________________________
+
+There's a format for a reason smartass
+Format: deadline [taskname] /by [datetime]
+____________________________________________________________
+
+There's a format for a reason smartass
+Format: event [event] /from [datetime] /to [datetime]
+____________________________________________________________
+
+1.[T][ ] borrow book
+2.[D][ ] return book (by: Sunday)
+3.[E][X] project meeting (from: Mon 2pm to: 4pm)
+4.[T][ ] buy groceries
+5.[D][ ] submit report (by: Friday 5pm)
+6.[T][ ] read book
+____________________________________________________________
+
+Invalid index, I need an index to refer to dumbass
+____________________________________________________________
+
+Invalid index, Index must be a number you baboon
+____________________________________________________________
+
+Invalid index, would you like to demonstrate what a negative index looks like? I didn't think so
+____________________________________________________________
+
+Invalid index, you do not have that many tasks you lazy monkey
+____________________________________________________________
+
+Invalid index, you do not have that many tasks you lazy monkey
+____________________________________________________________
+
+Invalid index, I need an index to refer to dumbass
+____________________________________________________________
+
+Invalid index, you do not have that many tasks you lazy monkey
+____________________________________________________________
+
+1.[T][ ] borrow book
+2.[D][ ] return book (by: Sunday)
+3.[E][X] project meeting (from: Mon 2pm to: 4pm)
+4.[T][ ] buy groceries
+5.[D][ ] submit report (by: Friday 5pm)
+6.[T][ ] read book
+____________________________________________________________
+
+Added Todo:
+   [T][ ] morning jog
+You now have 7 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Todo:
+   [T][ ] read chapter 5
+You now have 8 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Deadline:
+   [D][ ] eat potato (by: Friday 11:59pm)
+You now have 9 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Deadline:
+   [D][ ] pay bills (by: next Monday)
+You now have 10 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Event:
+   [E][ ] team meeting (from: 2pm to: 3pm)
+You now have 11 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Event:
+   [E][ ] birthday party (from: Sat 7pm to: 10pm)
+You now have 12 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+1.[T][ ] borrow book
+2.[D][ ] return book (by: Sunday)
+3.[E][X] project meeting (from: Mon 2pm to: 4pm)
+4.[T][ ] buy groceries
+5.[D][ ] submit report (by: Friday 5pm)
+6.[T][ ] read book
+7.[T][ ] morning jog
+8.[T][ ] read chapter 5
+9.[D][ ] eat potato (by: Friday 11:59pm)
+10.[D][ ] pay bills (by: next Monday)
+11.[E][ ] team meeting (from: 2pm to: 3pm)
+12.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+____________________________________________________________
+
+Marked as Done: [D][X] eat potato (by: Friday 11:59pm)
+____________________________________________________________
+
+Marked as Done: [E][X] team meeting (from: 2pm to: 3pm)
+____________________________________________________________
+
+Invalid index, you do not have that many tasks you lazy monkey
+____________________________________________________________
+
+1.[T][ ] borrow book
+2.[D][ ] return book (by: Sunday)
+3.[E][X] project meeting (from: Mon 2pm to: 4pm)
+4.[T][ ] buy groceries
+5.[D][ ] submit report (by: Friday 5pm)
+6.[T][ ] read book
+7.[T][ ] morning jog
+8.[T][ ] read chapter 5
+9.[D][X] eat potato (by: Friday 11:59pm)
+10.[D][ ] pay bills (by: next Monday)
+11.[E][X] team meeting (from: 2pm to: 3pm)
+12.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+____________________________________________________________
+
+Marked as Undone: [E][ ] team meeting (from: 2pm to: 3pm)
+____________________________________________________________
+
+1.[T][ ] borrow book
+2.[D][ ] return book (by: Sunday)
+3.[E][X] project meeting (from: Mon 2pm to: 4pm)
+4.[T][ ] buy groceries
+5.[D][ ] submit report (by: Friday 5pm)
+6.[T][ ] read book
+7.[T][ ] morning jog
+8.[T][ ] read chapter 5
+9.[D][X] eat potato (by: Friday 11:59pm)
+10.[D][ ] pay bills (by: next Monday)
+11.[E][ ] team meeting (from: 2pm to: 3pm)
+12.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+____________________________________________________________
+
+ Bye. Hope to see you again soon!
+____________________________________________________________
