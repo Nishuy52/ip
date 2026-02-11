@@ -10,7 +10,7 @@ public class UI {
             + "|_|   |_| .__/| .__/ \\__, |\n"
             + "        |_|   |_|    |___/ \n";
 
-    private static final String GREETING = " Hello! I'm pippy.ui.Pippy\n What can I do for you?\n";
+    private static final String GREETING = " Hello! I'm Pippy\n What can I do for you?\n";
     private static final String FAREWELL = " Bye. Hope to see you again soon!\n";
     private static final String LINE = "____________________________________________________________\n";
     
