@@ -1,20 +1,26 @@
 ____________________________________________________________
- Hello! I'm pippy.ui.Pippy
+ ____  _
+|  _ \(_)_ __  _ __  _   _
+| |_) | | '_ \| '_ \| | | |
+|  __/| | |_) | |_) | |_| |
+|_|   |_| .__/| .__/ \__, |
+        |_|   |_|    |___/
+ Hello! I'm Pippy
  What can I do for you?
 
 ____________________________________________________________
 
-Added pippy.task.Todo:
+Added Todo:
    [T][ ] borrow book
 You now have 1 tasks in your list, unproductive waste of space
 ____________________________________________________________
 
-Added pippy.task.Deadline:
+Added Deadline:
    [D][ ] return book (by: Sunday)
 You now have 2 tasks in your list, unproductive waste of space
 ____________________________________________________________
 
-Added pippy.task.Event:
+Added Event:
    [E][ ] project meeting (from: Mon 2pm to: 4pm)
 You now have 3 tasks in your list, unproductive waste of space
 ____________________________________________________________
@@ -43,12 +49,12 @@ ____________________________________________________________
 3.[E][X] project meeting (from: Mon 2pm to: 4pm)
 ____________________________________________________________
 
-Added pippy.task.Todo:
+Added Todo:
    [T][ ] buy groceries
 You now have 4 tasks in your list, unproductive waste of space
 ____________________________________________________________
 
-Added pippy.task.Deadline:
+Added Deadline:
    [D][ ] submit report (by: Friday 5pm)
 You now have 5 tasks in your list, unproductive waste of space
 ____________________________________________________________
@@ -74,7 +80,7 @@ Give your event a name, you lazy buffoon
 Format: event [event] /from [datetime] /to [datetime]
 ____________________________________________________________
 
-Added pippy.task.Todo:
+Added Todo:
    [T][ ] read book
 You now have 6 tasks in your list, unproductive waste of space
 ____________________________________________________________
@@ -128,32 +134,32 @@ ____________________________________________________________
 6.[T][ ] read book
 ____________________________________________________________
 
-Added pippy.task.Todo:
+Added Todo:
    [T][ ] morning jog
 You now have 7 tasks in your list, unproductive waste of space
 ____________________________________________________________
 
-Added pippy.task.Todo:
+Added Todo:
    [T][ ] read chapter 5
 You now have 8 tasks in your list, unproductive waste of space
 ____________________________________________________________
 
-Added pippy.task.Deadline:
+Added Deadline:
    [D][ ] eat potato (by: Friday 11:59pm)
 You now have 9 tasks in your list, unproductive waste of space
 ____________________________________________________________
 
-Added pippy.task.Deadline:
+Added Deadline:
    [D][ ] pay bills (by: next Monday)
 You now have 10 tasks in your list, unproductive waste of space
 ____________________________________________________________
 
-Added pippy.task.Event:
+Added Event:
    [E][ ] team meeting (from: 2pm to: 3pm)
 You now have 11 tasks in your list, unproductive waste of space
 ____________________________________________________________
 
-Added pippy.task.Event:
+Added Event:
    [E][ ] birthday party (from: Sat 7pm to: 10pm)
 You now have 12 tasks in your list, unproductive waste of space
 ____________________________________________________________
