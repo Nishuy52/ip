@@ -1,3 +1,7 @@
+package pippy.ui;
+
+import pippy.task.*;
+
 import java.util.Scanner;
 
 public class Pippy {
@@ -76,21 +80,21 @@ public class Pippy {
         String[] params = Parser.parseTodoCommand(input);
         Task task = new Todo(params[0]);
         taskList.addTask(task);
-        ui.showTaskAdded(task, taskList.getTaskCount(), "Todo");
+        ui.showTaskAdded(task, taskList.getTaskCount(), "pippy.task.Todo");
     }
 
     private void handleDeadline(String input) throws PippyException {
         String[] params = Parser.parseDeadlineCommand(input);
         Task task = new Deadline(params[0], params[1]);
         taskList.addTask(task);
-        ui.showTaskAdded(task, taskList.getTaskCount(), "Deadline");
+        ui.showTaskAdded(task, taskList.getTaskCount(), "pippy.task.Deadline");
     }
 
     private void handleEvent(String input) throws PippyException {
         String[] params = Parser.parseEventCommand(input);
         Task task = new Event(params[0], params[1], params[2]);
         taskList.addTask(task);
-        ui.showTaskAdded(task, taskList.getTaskCount(), "Event");
+        ui.showTaskAdded(task, taskList.getTaskCount(), "pippy.task.Event");
     }
 
     private void handleMark(String input) throws PippyException {

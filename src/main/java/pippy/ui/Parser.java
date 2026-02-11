@@ -1,3 +1,5 @@
+package pippy.ui;
+
 public class Parser {
 
     public static String getCommand(String input) {
