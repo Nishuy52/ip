@@ -2,6 +2,8 @@ package pippy.ui;
 
 import pippy.task.Task;
 
+import java.util.ArrayList;
+
 public class UI {
     private static final String LOGO = " ____  _                   \n"
             + "|  _ \\(_)_ __  _ __  _   _ \n"
@@ -13,8 +15,7 @@ public class UI {
     private static final String GREETING = " Hello! I'm Pippy\n What can I do for you?\n";
     private static final String FAREWELL = " Bye. Hope to see you again soon!\n";
     private static final String LINE = "____________________________________________________________\n";
-    
-    // Error messages
+
     private static final String ERROR_TODO_EMPTY = "Give your task a name, you lazy buffoon\nFormat: todo [task]";
     private static final String ERROR_DEADLINE_EMPTY = "Give your task a name, you lazy buffoon\nFormat: deadline [taskname] /by [datetime]";
     private static final String ERROR_DEADLINE_FORMAT = "There's a format for a reason smartass\nFormat: deadline [taskname] /by [datetime]";
@@ -25,7 +26,6 @@ public class UI {
     private static final String ERROR_INDEX_NEGATIVE = "Invalid index, would you like to demonstrate what a negative index looks like? I didn't think so";
     private static final String ERROR_INDEX_TOO_LARGE = "Invalid index, you do not have that many tasks you lazy monkey";
 
-    // Tasklist Messages
     private static final String TASK_COUNT_MESSAGE = "You now have %d tasks in your list, unproductive waste of space";
 
     public void showWelcome() {
@@ -68,9 +68,15 @@ public class UI {
         System.out.println(message);
     }
 
-    public void showTaskList(Task[] tasks, int count) {
-        for (int i = 0; i < count; i++) {
-            System.out.println((i + 1) + "." + tasks[i].toString());
+    public void showTaskDeleted(Task task, int totalTasks) {
+        System.out.println("Noted. I've removed this task, slacker:");
+        System.out.println("   " + task.toString());
+        System.out.printf("Now you have %d tasks in the list.%n", totalTasks);
+    }
+
+    public void showTaskList(ArrayList<Task> tasks) {
+        for (int i = 0; i < tasks.size(); i++) {
+            System.out.println((i + 1) + "." + tasks.get(i).toString());
         }
     }
 }
