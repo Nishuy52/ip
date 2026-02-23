@@ -5,7 +5,6 @@ import pippy.task.*;
 import java.util.Scanner;
 
 public class Pippy {
-    // REMOVED: private static final int MAX_TASKS = 100;
 
     private final TaskList taskList;
     private final UI ui;
@@ -13,7 +12,7 @@ public class Pippy {
     private boolean isRunning;
 
     public Pippy() {
-        this.taskList = new TaskList(); // UPDATED: no maxSize argument
+        this.taskList = new TaskList();
         this.ui = new UI();
         this.scanner = new Scanner(System.in);
         this.isRunning = false;
@@ -58,7 +57,7 @@ public class Pippy {
             case "event"    -> handleEvent(input);
             case "mark"     -> handleMark(input);
             case "unmark"   -> handleUnmark(input);
-            case "delete"   -> handleDelete(input); // NEW
+            case "delete"   -> handleDelete(input);
             default -> {}
         }
     }
