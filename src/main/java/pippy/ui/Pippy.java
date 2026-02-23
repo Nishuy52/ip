@@ -1,20 +1,24 @@
 package pippy.ui;
 
+import pippy.storage.Storage;
 import pippy.task.*;
 
 import java.util.Scanner;
 
 public class Pippy {
     private static final int MAX_TASKS = 100;
-    
+    private static final String DATA_FILE_PATH = "./data/pippy.txt";
+
     private final TaskList taskList;
     private final UI ui;
+    private final Storage storage;
     private final Scanner scanner;
     private boolean isRunning;
 
     public Pippy() {
-        this.taskList = new TaskList(MAX_TASKS);
         this.ui = new UI();
+        this.storage = new Storage(DATA_FILE_PATH, MAX_TASKS);
+        this.taskList = storage.load();
         this.scanner = new Scanner(System.in);
         this.isRunning = false;
     }
@@ -62,7 +66,6 @@ public class Pippy {
             case "mark" -> handleMark(input);
             case "unmark" -> handleUnmark(input);
             default -> {
-                // Unknown commands are silently ignored in the original
             }
         }
     }
@@ -73,13 +76,14 @@ public class Pippy {
     }
 
     private void handleList() {
-        ui.showTaskList(taskList.getTasks(), taskList.getTaskCount());
+        ui.showTaskList(taskList);
     }
 
     private void handleTodo(String input) throws PippyException {
         String[] params = Parser.parseTodoCommand(input);
         Task task = new Todo(params[0]);
         taskList.addTask(task);
+        storage.save(taskList);
         ui.showTaskAdded(task, taskList.getTaskCount(), "Todo");
     }
 
@@ -87,6 +91,7 @@ public class Pippy {
         String[] params = Parser.parseDeadlineCommand(input);
         Task task = new Deadline(params[0], params[1]);
         taskList.addTask(task);
+        storage.save(taskList);
         ui.showTaskAdded(task, taskList.getTaskCount(), "Deadline");
     }
 
@@ -94,28 +99,23 @@ public class Pippy {
         String[] params = Parser.parseEventCommand(input);
         Task task = new Event(params[0], params[1], params[2]);
         taskList.addTask(task);
+        storage.save(taskList);
         ui.showTaskAdded(task, taskList.getTaskCount(), "Event");
     }
 
     private void handleMark(String input) throws PippyException {
         int index = Parser.parseTaskIndex(input);
-        
-        if (!taskList.isValidIndex(index)) {
-            throw new PippyException("INDEX_TOO_LARGE");
-        }
-        
+        if (!taskList.isValidIndex(index)) throw new PippyException("INDEX_TOO_LARGE");
         taskList.markTaskAsDone(index);
+        storage.save(taskList);
         ui.showTaskMarked(taskList.getTask(index), true);
     }
 
     private void handleUnmark(String input) throws PippyException {
         int index = Parser.parseTaskIndex(input);
-        
-        if (!taskList.isValidIndex(index)) {
-            throw new PippyException("INDEX_TOO_LARGE");
-        }
-        
+        if (!taskList.isValidIndex(index)) throw new PippyException("INDEX_TOO_LARGE");
         taskList.markTaskAsUndone(index);
+        storage.save(taskList);
         ui.showTaskMarked(taskList.getTask(index), false);
     }
 }

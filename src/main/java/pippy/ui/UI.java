@@ -1,6 +1,7 @@
 package pippy.ui;
 
 import pippy.task.Task;
+import pippy.task.TaskList;
 
 public class UI {
     private static final String LOGO = " ____  _                   \n"
@@ -68,9 +69,9 @@ public class UI {
         System.out.println(message);
     }
 
-    public void showTaskList(Task[] tasks, int count) {
-        for (int i = 0; i < count; i++) {
-            System.out.println((i + 1) + "." + tasks[i].toString());
+    public void showTaskList(TaskList tasks) {
+        for (int i = 0; i < tasks.getTaskCount(); i++) {
+            System.out.println((i + 1) + "." + tasks.getTask(i).toString());
         }
     }
 }
