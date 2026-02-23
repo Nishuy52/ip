@@ -1,40 +1,47 @@
 package pippy.task;
 
-public class TaskList {
-    private final Task[] tasks;
-    private int taskCount;
+import java.util.ArrayList;
 
-    public TaskList(int maxSize) {
-        this.tasks = new Task[maxSize];
-        this.taskCount = 0;
+public class TaskList {
+    private final ArrayList<Task> tasks;
+
+    public TaskList() {
+        this.tasks = new ArrayList<>();
+    }
+
+    public TaskList(ArrayList<Task> tasks) {
+        this.tasks = tasks;
     }
 
     public void addTask(Task task) {
-        tasks[taskCount] = task;
-        taskCount++;
+        tasks.add(task);
     }
 
     public Task getTask(int index) {
-        return tasks[index];
+        return tasks.get(index);
+    }
+
+    public Task deleteTask(int index) {
+        return tasks.remove(index);
     }
 
     public int getTaskCount() {
-        return taskCount;
+        return tasks.size();
     }
 
-    public Task[] getTasks() {
+    public ArrayList<Task> getTasks() {
         return tasks;
     }
 
     public boolean isValidIndex(int index) {
-        return index >= 0 && index < taskCount;
+        return index >= 0 && index < tasks.size();
     }
 
     public void markTaskAsDone(int index) {
-        tasks[index].setDone();
+        tasks.get(index).setDone();
     }
 
     public void markTaskAsUndone(int index) {
-        tasks[index].setUndone();
+        tasks.get(index).setUndone();
     }
 }

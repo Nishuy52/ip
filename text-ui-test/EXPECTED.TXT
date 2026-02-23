@@ -66,8 +66,6 @@ ____________________________________________________________
 5.[D][ ] submit report (by: Friday 5pm)
 ____________________________________________________________
 
-____________________________________________________________
-
 Give your task a name, you lazy buffoon
 Format: todo [task]
 ____________________________________________________________
@@ -187,38 +185,258 @@ ____________________________________________________________
 Invalid index, you do not have that many tasks you lazy monkey
 ____________________________________________________________
 
-1.[T][ ] borrow book
-2.[D][ ] return book (by: Sunday)
-3.[E][X] project meeting (from: Mon 2pm to: 4pm)
-4.[T][ ] buy groceries
-5.[D][ ] submit report (by: Friday 5pm)
-6.[T][ ] read book
-7.[T][ ] morning jog
-8.[T][ ] read chapter 5
-9.[D][X] eat potato (by: Friday 11:59pm)
-10.[D][ ] pay bills (by: next Monday)
-11.[E][X] team meeting (from: 2pm to: 3pm)
-12.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+Added Todo:
+   [T][ ] read book
+You now have 13 tasks in your list, unproductive waste of space
 ____________________________________________________________
 
-Marked as Undone: [E][ ] team meeting (from: 2pm to: 3pm)
+Added Todo:
+   [T][ ] return book
+You now have 14 tasks in your list, unproductive waste of space
 ____________________________________________________________
 
-1.[T][ ] borrow book
-2.[D][ ] return book (by: Sunday)
-3.[E][X] project meeting (from: Mon 2pm to: 4pm)
-4.[T][ ] buy groceries
-5.[D][ ] submit report (by: Friday 5pm)
-6.[T][ ] read book
-7.[T][ ] morning jog
-8.[T][ ] read chapter 5
-9.[D][X] eat potato (by: Friday 11:59pm)
-10.[D][ ] pay bills (by: next Monday)
-11.[E][ ] team meeting (from: 2pm to: 3pm)
-12.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+Noted. I've removed this task, slacker:
+   [T][ ] borrow book
+Now you have 13 tasks in the list.
+____________________________________________________________
+
+1.[D][ ] return book (by: Sunday)
+2.[E][X] project meeting (from: Mon 2pm to: 4pm)
+3.[T][ ] buy groceries
+4.[D][ ] submit report (by: Friday 5pm)
+5.[T][ ] read book
+6.[T][ ] morning jog
+7.[T][ ] read chapter 5
+8.[D][X] eat potato (by: Friday 11:59pm)
+9.[D][ ] pay bills (by: next Monday)
+10.[E][X] team meeting (from: 2pm to: 3pm)
+11.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+12.[T][ ] read book
+13.[T][ ] return book
+____________________________________________________________
+
+Added Deadline:
+   [D][ ] submit report (by: Friday 5pm)
+You now have 14 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Deadline:
+   [D][ ] pay bills (by: Monday)
+You now have 15 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Noted. I've removed this task, slacker:
+   [E][X] project meeting (from: Mon 2pm to: 4pm)
+Now you have 14 tasks in the list.
+____________________________________________________________
+
+1.[D][ ] return book (by: Sunday)
+2.[T][ ] buy groceries
+3.[D][ ] submit report (by: Friday 5pm)
+4.[T][ ] read book
+5.[T][ ] morning jog
+6.[T][ ] read chapter 5
+7.[D][X] eat potato (by: Friday 11:59pm)
+8.[D][ ] pay bills (by: next Monday)
+9.[E][X] team meeting (from: 2pm to: 3pm)
+10.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+11.[T][ ] read book
+12.[T][ ] return book
+13.[D][ ] submit report (by: Friday 5pm)
+14.[D][ ] pay bills (by: Monday)
+____________________________________________________________
+
+Added Todo:
+   [T][ ] buy groceries
+You now have 15 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Marked as Done: [D][X] return book (by: Sunday)
+____________________________________________________________
+
+Noted. I've removed this task, slacker:
+   [D][X] return book (by: Sunday)
+Now you have 14 tasks in the list.
+____________________________________________________________
+
+1.[T][ ] buy groceries
+2.[D][ ] submit report (by: Friday 5pm)
+3.[T][ ] read book
+4.[T][ ] morning jog
+5.[T][ ] read chapter 5
+6.[D][X] eat potato (by: Friday 11:59pm)
+7.[D][ ] pay bills (by: next Monday)
+8.[E][X] team meeting (from: 2pm to: 3pm)
+9.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+10.[T][ ] read book
+11.[T][ ] return book
+12.[D][ ] submit report (by: Friday 5pm)
+13.[D][ ] pay bills (by: Monday)
+14.[T][ ] buy groceries
+____________________________________________________________
+
+Added Todo:
+   [T][ ] task one
+You now have 15 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Todo:
+   [T][ ] task two
+You now have 16 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Todo:
+   [T][ ] task three
+You now have 17 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Noted. I've removed this task, slacker:
+   [T][ ] morning jog
+Now you have 16 tasks in the list.
+____________________________________________________________
+
+1.[T][ ] buy groceries
+2.[D][ ] submit report (by: Friday 5pm)
+3.[T][ ] read book
+4.[T][ ] read chapter 5
+5.[D][X] eat potato (by: Friday 11:59pm)
+6.[D][ ] pay bills (by: next Monday)
+7.[E][X] team meeting (from: 2pm to: 3pm)
+8.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+9.[T][ ] read book
+10.[T][ ] return book
+11.[D][ ] submit report (by: Friday 5pm)
+12.[D][ ] pay bills (by: Monday)
+13.[T][ ] buy groceries
+14.[T][ ] task one
+15.[T][ ] task two
+16.[T][ ] task three
+____________________________________________________________
+
+Noted. I've removed this task, slacker:
+   [T][ ] read chapter 5
+Now you have 15 tasks in the list.
+____________________________________________________________
+
+Noted. I've removed this task, slacker:
+   [T][ ] read book
+Now you have 14 tasks in the list.
+____________________________________________________________
+
+Noted. I've removed this task, slacker:
+   [D][ ] submit report (by: Friday 5pm)
+Now you have 13 tasks in the list.
+____________________________________________________________
+
+Noted. I've removed this task, slacker:
+   [T][ ] buy groceries
+Now you have 12 tasks in the list.
+____________________________________________________________
+
+1.[D][X] eat potato (by: Friday 11:59pm)
+2.[D][ ] pay bills (by: next Monday)
+3.[E][X] team meeting (from: 2pm to: 3pm)
+4.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+5.[T][ ] read book
+6.[T][ ] return book
+7.[D][ ] submit report (by: Friday 5pm)
+8.[D][ ] pay bills (by: Monday)
+9.[T][ ] buy groceries
+10.[T][ ] task one
+11.[T][ ] task two
+12.[T][ ] task three
+____________________________________________________________
+
+Invalid index, I need an index to refer to dumbass
+____________________________________________________________
+
+Invalid index, Index must be a number you baboon
+____________________________________________________________
+
+Added Todo:
+   [T][ ] task one
+You now have 13 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Added Todo:
+   [T][ ] task two
+You now have 14 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+Noted. I've removed this task, slacker:
+   [T][ ] read book
+Now you have 13 tasks in the list.
+____________________________________________________________
+
+1.[D][X] eat potato (by: Friday 11:59pm)
+2.[D][ ] pay bills (by: next Monday)
+3.[E][X] team meeting (from: 2pm to: 3pm)
+4.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+5.[T][ ] return book
+6.[D][ ] submit report (by: Friday 5pm)
+7.[D][ ] pay bills (by: Monday)
+8.[T][ ] buy groceries
+9.[T][ ] task one
+10.[T][ ] task two
+11.[T][ ] task three
+12.[T][ ] task one
+13.[T][ ] task two
+____________________________________________________________
+
+Invalid index, would you like to demonstrate what a negative index looks like? I didn't think so
+____________________________________________________________
+
+Invalid index, would you like to demonstrate what a negative index looks like? I didn't think so
+____________________________________________________________
+
+1.[D][X] eat potato (by: Friday 11:59pm)
+2.[D][ ] pay bills (by: next Monday)
+3.[E][X] team meeting (from: 2pm to: 3pm)
+4.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+5.[T][ ] return book
+6.[D][ ] submit report (by: Friday 5pm)
+7.[D][ ] pay bills (by: Monday)
+8.[T][ ] buy groceries
+9.[T][ ] task one
+10.[T][ ] task two
+11.[T][ ] task three
+12.[T][ ] task one
+13.[T][ ] task two
+____________________________________________________________
+
+1.[D][X] eat potato (by: Friday 11:59pm)
+2.[D][ ] pay bills (by: next Monday)
+3.[E][X] team meeting (from: 2pm to: 3pm)
+4.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+5.[T][ ] return book
+6.[D][ ] submit report (by: Friday 5pm)
+7.[D][ ] pay bills (by: Monday)
+8.[T][ ] buy groceries
+9.[T][ ] task one
+10.[T][ ] task two
+11.[T][ ] task three
+12.[T][ ] task one
+13.[T][ ] task two
+____________________________________________________________
+
+Marked as Undone: [T][ ] task three
+____________________________________________________________
+
+1.[D][X] eat potato (by: Friday 11:59pm)
+2.[D][ ] pay bills (by: next Monday)
+3.[E][X] team meeting (from: 2pm to: 3pm)
+4.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+5.[T][ ] return book
+6.[D][ ] submit report (by: Friday 5pm)
+7.[D][ ] pay bills (by: Monday)
+8.[T][ ] buy groceries
+9.[T][ ] task one
+10.[T][ ] task two
+11.[T][ ] task three
+12.[T][ ] task one
+13.[T][ ] task two
 ____________________________________________________________
 
  Bye. Hope to see you again soon!
 
 ____________________________________________________________
-

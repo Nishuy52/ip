@@ -5,15 +5,15 @@ import pippy.task.*;
 import java.util.Scanner;
 
 public class Pippy {
-    private static final int MAX_TASKS = 100;
-    
+    // REMOVED: private static final int MAX_TASKS = 100;
+
     private final TaskList taskList;
     private final UI ui;
     private final Scanner scanner;
     private boolean isRunning;
 
     public Pippy() {
-        this.taskList = new TaskList(MAX_TASKS);
+        this.taskList = new TaskList(); // UPDATED: no maxSize argument
         this.ui = new UI();
         this.scanner = new Scanner(System.in);
         this.isRunning = false;
@@ -26,7 +26,7 @@ public class Pippy {
     public void run() {
         ui.showWelcome();
         isRunning = true;
-        
+
         while (isRunning) {
             ui.showLine();
             String input = scanner.nextLine();
@@ -38,12 +38,10 @@ public class Pippy {
         if (input.trim().isEmpty()) {
             return;
         }
-        
         if (input.equals("bye")) {
             handleExit();
             return;
         }
-        
         try {
             executeCommand(input);
         } catch (PippyException e) {
@@ -53,17 +51,15 @@ public class Pippy {
 
     private void executeCommand(String input) throws PippyException {
         String command = Parser.getCommand(input);
-        
         switch (command) {
-            case "list" -> handleList();
-            case "todo" -> handleTodo(input);
+            case "list"     -> handleList();
+            case "todo"     -> handleTodo(input);
             case "deadline" -> handleDeadline(input);
-            case "event" -> handleEvent(input);
-            case "mark" -> handleMark(input);
-            case "unmark" -> handleUnmark(input);
-            default -> {
-                // Unknown commands are silently ignored in the original
-            }
+            case "event"    -> handleEvent(input);
+            case "mark"     -> handleMark(input);
+            case "unmark"   -> handleUnmark(input);
+            case "delete"   -> handleDelete(input); // NEW
+            default -> {}
         }
     }
 
@@ -73,7 +69,7 @@ public class Pippy {
     }
 
     private void handleList() {
-        ui.showTaskList(taskList.getTasks(), taskList.getTaskCount());
+        ui.showTaskList(taskList.getTasks());
     }
 
     private void handleTodo(String input) throws PippyException {
@@ -99,23 +95,28 @@ public class Pippy {
 
     private void handleMark(String input) throws PippyException {
         int index = Parser.parseTaskIndex(input);
-        
         if (!taskList.isValidIndex(index)) {
             throw new PippyException("INDEX_TOO_LARGE");
         }
-        
         taskList.markTaskAsDone(index);
         ui.showTaskMarked(taskList.getTask(index), true);
     }
 
     private void handleUnmark(String input) throws PippyException {
         int index = Parser.parseTaskIndex(input);
-        
         if (!taskList.isValidIndex(index)) {
             throw new PippyException("INDEX_TOO_LARGE");
         }
-        
         taskList.markTaskAsUndone(index);
         ui.showTaskMarked(taskList.getTask(index), false);
+    }
+
+    private void handleDelete(String input) throws PippyException {
+        int index = Parser.parseTaskIndex(input);
+        if (!taskList.isValidIndex(index)) {
+            throw new PippyException("INDEX_TOO_LARGE");
+        }
+        Task removed = taskList.deleteTask(index);
+        ui.showTaskDeleted(removed, taskList.getTaskCount());
     }
 }
