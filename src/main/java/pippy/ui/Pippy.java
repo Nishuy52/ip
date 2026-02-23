@@ -1,19 +1,24 @@
 package pippy.ui;
 
+import pippy.storage.Storage;
 import pippy.task.*;
 
 import java.util.Scanner;
 
 public class Pippy {
 
+    private static final String DATA_FILE_PATH = "./data/pippy.txt";
+
     private final TaskList taskList;
     private final UI ui;
+    private final Storage storage;
     private final Scanner scanner;
     private boolean isRunning;
 
     public Pippy() {
-        this.taskList = new TaskList();
         this.ui = new UI();
+        this.storage = new Storage(DATA_FILE_PATH);
+        this.taskList = storage.load();
         this.scanner = new Scanner(System.in);
         this.isRunning = false;
     }
@@ -25,7 +30,6 @@ public class Pippy {
     public void run() {
         ui.showWelcome();
         isRunning = true;
-
         while (isRunning) {
             ui.showLine();
             String input = scanner.nextLine();
@@ -51,8 +55,8 @@ public class Pippy {
     private void executeCommand(String input) throws PippyException {
         String command = Parser.getCommand(input);
         switch (command) {
-            case "list"     -> handleList();
-            case "todo"     -> handleTodo(input);
+            case "list" -> handleList();
+            case "todo" -> handleTodo(input);
             case "deadline" -> handleDeadline(input);
             case "event"    -> handleEvent(input);
             case "mark"     -> handleMark(input);
@@ -75,6 +79,7 @@ public class Pippy {
         String[] params = Parser.parseTodoCommand(input);
         Task task = new Todo(params[0]);
         taskList.addTask(task);
+        storage.save(taskList);
         ui.showTaskAdded(task, taskList.getTaskCount(), "Todo");
     }
 
@@ -82,6 +87,7 @@ public class Pippy {
         String[] params = Parser.parseDeadlineCommand(input);
         Task task = new Deadline(params[0], params[1]);
         taskList.addTask(task);
+        storage.save(taskList);
         ui.showTaskAdded(task, taskList.getTaskCount(), "Deadline");
     }
 
@@ -89,6 +95,7 @@ public class Pippy {
         String[] params = Parser.parseEventCommand(input);
         Task task = new Event(params[0], params[1], params[2]);
         taskList.addTask(task);
+        storage.save(taskList);
         ui.showTaskAdded(task, taskList.getTaskCount(), "Event");
     }
 
@@ -98,6 +105,7 @@ public class Pippy {
             throw new PippyException("INDEX_TOO_LARGE");
         }
         taskList.markTaskAsDone(index);
+        storage.save(taskList);
         ui.showTaskMarked(taskList.getTask(index), true);
     }
 
@@ -107,6 +115,7 @@ public class Pippy {
             throw new PippyException("INDEX_TOO_LARGE");
         }
         taskList.markTaskAsUndone(index);
+        storage.save(taskList);
         ui.showTaskMarked(taskList.getTask(index), false);
     }
 
@@ -117,5 +126,6 @@ public class Pippy {
         }
         Task removed = taskList.deleteTask(index);
         ui.showTaskDeleted(removed, taskList.getTaskCount());
+        storage.save(taskList);
     }
 }

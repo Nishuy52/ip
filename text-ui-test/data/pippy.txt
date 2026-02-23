@@ -1,0 +1,13 @@
+D | 1 | eat potato | Friday 11:59pm
+D | 0 | pay bills | next Monday
+E | 1 | team meeting | 2pm | 3pm
+E | 0 | birthday party | Sat 7pm | 10pm
+T | 0 | return book
+D | 0 | submit report | Friday 5pm
+D | 0 | pay bills | Monday
+T | 0 | buy groceries
+T | 0 | task one
+T | 0 | task two
+T | 0 | task three
+T | 0 | task one
+T | 0 | task two
