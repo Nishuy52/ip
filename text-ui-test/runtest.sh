@@ -13,14 +13,31 @@ then
 fi
 
 # compile the code into the bin folder, terminates if error occurred
-if ! javac -cp ../src/main/java -Xlint:none -d ../bin ../src/main/java/pippy/task/*.java ../src/main/java/pippy/ui/*.java
+if ! javac -cp ../src/main/java -Xlint:none -d ../bin \
+    ../src/main/java/pippy/task/*.java \
+    ../src/main/java/pippy/storage/*.java \
+    ../src/main/java/pippy/command/*.java \
+    ../src/main/java/pippy/ui/*.java
 then
     echo "********** BUILD FAILURE **********"
     exit 1
 fi
 
+# delete saved data from any previous run so each test starts clean
+# java is invoked from text-ui-test/, so ./data/pippy.txt resolves to text-ui-test/data/pippy.txt
+if [ -e "./data/pippy.txt" ]
+then
+    rm ./data/pippy.txt
+fi
+
 # run the program, feed commands from input.txt file and redirect the output to the ACTUAL.TXT
 java -classpath ../bin pippy.ui.Pippy < input.txt > ACTUAL.TXT
+
+# delete saved data produced during this test run
+if [ -e "./data/pippy.txt" ]
+then
+    rm ./data/pippy.txt
+fi
 
 # convert to UNIX format
 cp EXPECTED.TXT EXPECTED-UNIX.TXT

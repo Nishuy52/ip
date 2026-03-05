@@ -6,24 +6,22 @@ if not exist ..\bin mkdir ..\bin
 REM delete output from previous run
 if exist ACTUAL.TXT del ACTUAL.TXT
 
-REM delete saved data from any previous run so each test starts clean
-if exist ..\data\pippy.txt del ..\data\pippy.txt
-if exist ..\data rmdir ..\data
-
 REM compile the code into the bin folder
-javac  -cp ..\src\main\java -Xlint:none -d ..\bin ..\src\main\java\pippy\task\*.java ..\src\main\java\pippy\ui\*.java
+javac  -cp ..\src\main\java -Xlint:none -d ..\bin ..\src\main\java\pippy\task\*.java ..\src\main\java\pippy\storage\*.java ..\src\main\java\pippy\command\*.java ..\src\main\java\pippy\ui\*.java
 IF ERRORLEVEL 1 (
     echo ********** BUILD FAILURE **********
     exit /b 1
 )
 REM no error here, errorlevel == 0
 
+REM delete saved data from any previous run so each test starts clean
+if exist data\pippy.txt del data\pippy.txt
+
 REM run the program, feed commands from input.txt file and redirect the output to the ACTUAL.TXT
 java -classpath ..\bin pippy.ui.Pippy < input.txt > ACTUAL.TXT
 
-REM delete saved data after the run so no state leaks to the next run
-if exist ..\data\pippy.txt del ..\data\pippy.txt
-if exist ..\data rmdir ..\data
+REM delete saved data produced during this test run
+if exist data\pippy.txt del data\pippy.txt
 
 REM compare the output to the expected output
 FC ACTUAL.TXT EXPECTED.TXT

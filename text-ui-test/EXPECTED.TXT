@@ -437,6 +437,62 @@ ____________________________________________________________
 13.[T][ ] task two
 ____________________________________________________________
 
+Added Deadline:
+   [D][ ] structured date (by: Dec 1 2025)
+You now have 14 tasks in your list, unproductive waste of space
+____________________________________________________________
+
+1.[D][X] eat potato (by: Friday 11:59pm)
+2.[D][ ] pay bills (by: next Monday)
+3.[E][X] team meeting (from: 2pm to: 3pm)
+4.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+5.[T][ ] return book
+6.[D][ ] submit report (by: Friday 5pm)
+7.[D][ ] pay bills (by: Monday)
+8.[T][ ] buy groceries
+9.[T][ ] task one
+10.[T][ ] task two
+11.[T][ ] task three
+12.[T][ ] task one
+13.[T][ ] task two
+14.[D][ ] structured date (by: Dec 1 2025)
+____________________________________________________________
+
+Here are the matching tasks in your list:
+1.[T][ ] return book
+____________________________________________________________
+
+Here are the matching tasks in your list:
+1.[T][ ] return book
+____________________________________________________________
+
+Here are the matching tasks in your list:
+1.[E][X] team meeting (from: 2pm to: 3pm)
+____________________________________________________________
+
+No matching tasks found.
+____________________________________________________________
+
+Give me something to search for, genius
+Format: find [keyword]
+____________________________________________________________
+
+1.[D][X] eat potato (by: Friday 11:59pm)
+2.[D][ ] pay bills (by: next Monday)
+3.[E][X] team meeting (from: 2pm to: 3pm)
+4.[E][ ] birthday party (from: Sat 7pm to: 10pm)
+5.[T][ ] return book
+6.[D][ ] submit report (by: Friday 5pm)
+7.[D][ ] pay bills (by: Monday)
+8.[T][ ] buy groceries
+9.[T][ ] task one
+10.[T][ ] task two
+11.[T][ ] task three
+12.[T][ ] task one
+13.[T][ ] task two
+14.[D][ ] structured date (by: Dec 1 2025)
+____________________________________________________________
+
  Bye. Hope to see you again soon!
 
 ____________________________________________________________

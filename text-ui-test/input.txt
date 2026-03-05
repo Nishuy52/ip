@@ -70,4 +70,12 @@ list
 list
 unmark 11
 list
+deadline structured date /by 2025-12-01
+list
+find book
+find BOOK
+find meeting
+find xyz
+find
+list
 bye
