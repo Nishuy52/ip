@@ -17,3 +17,4 @@ text-ui-test/ACTUAL.TXT
 text-ui-test/EXPECTED-UNIX.TXT
 data/
 /src/main/java/META-INF/
+text-ui-test/data/pippy.txt
