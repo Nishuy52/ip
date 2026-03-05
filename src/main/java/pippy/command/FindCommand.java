@@ -15,7 +15,7 @@ public class FindCommand extends Command {
     private final String keyword;
 
     /**
-     * Constructs a FindCommand with the given search keyword.
+     * Constructs a FindCommand with given search keyword.
      *
      * @param keyword The keyword to search for in task descriptions.
      */
