@@ -95,6 +95,7 @@ public class Pippy {
                 case "mark" -> new MarkCommand(Parser.parseTaskIndex(input));
                 case "unmark" -> new UnmarkCommand(Parser.parseTaskIndex(input));
                 case "delete" -> new DeleteCommand(Parser.parseTaskIndex(input));
+                case "find" -> new FindCommand(Parser.parseFindCommand(input));
                 default -> null;
             };
         } catch (PippyException e) {

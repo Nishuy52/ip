@@ -28,6 +28,7 @@ public class UI {
     private static final String ERROR_INDEX_NOT_NUMBER = "Invalid index, Index must be a number you baboon";
     private static final String ERROR_INDEX_NEGATIVE = "Invalid index, would you like to demonstrate what a negative index looks like? I didn't think so";
     private static final String ERROR_INDEX_TOO_LARGE = "Invalid index, you do not have that many tasks you lazy monkey";
+    private static final String ERROR_FIND_EMPTY = "Give me something to search for, genius\nFormat: find [keyword]";
 
     private static final String TASK_COUNT_MESSAGE = "You now have %d tasks in your list, unproductive waste of space";
 
@@ -87,6 +88,7 @@ public class UI {
             case "INDEX_NOT_NUMBER" -> ERROR_INDEX_NOT_NUMBER;
             case "INDEX_NEGATIVE" -> ERROR_INDEX_NEGATIVE;
             case "INDEX_TOO_LARGE" -> ERROR_INDEX_TOO_LARGE;
+            case "FIND_EMPTY" -> ERROR_FIND_EMPTY;
             default -> errorType;
         };
         System.out.println(message);
