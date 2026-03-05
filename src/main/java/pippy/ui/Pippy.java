@@ -71,7 +71,7 @@ public class Pippy {
      * Returns null and shows an error for unknown commands.
      *
      * @param input The raw user input string.
-     * @return The corresponding Command object, or null if the command is unrecognized
+     * @return The corresponding Command object, or null if command is unrecognized
      *         or a parse error occurred.
      */
     private Command parseCommand(String input) {
