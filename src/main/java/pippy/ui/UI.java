@@ -3,6 +3,10 @@ package pippy.ui;
 import pippy.task.Task;
 import java.util.ArrayList;
 
+/**
+ * Handles all user-facing output for the Pippy application.
+ * Contains display methods for each interaction type.
+ */
 public class UI {
     private static final String LOGO = " ____  _                   \n"
             + "|  _ \\(_)_ __  _ __  _   _ \n"
@@ -27,30 +31,51 @@ public class UI {
 
     private static final String TASK_COUNT_MESSAGE = "You now have %d tasks in your list, unproductive waste of space";
 
+    /** Displays the welcome banner and greeting message. */
     public void showWelcome() {
         System.out.println(LINE + LOGO + GREETING);
     }
 
+    /** Displays the farewell message and closing separator line. */
     public void showGoodbye() {
         System.out.println(FAREWELL);
         System.out.println(LINE);
     }
 
+    /** Displays a horizontal separator line. */
     public void showLine() {
         System.out.println(LINE);
     }
 
+    /**
+     * Displays confirmation that a task was added, along with the updated task count.
+     *
+     * @param task       The task that was added.
+     * @param totalTasks The new total number of tasks in the list.
+     * @param taskType   A human-readable label for the task type (e.g., "Todo").
+     */
     public void showTaskAdded(Task task, int totalTasks, String taskType) {
         System.out.println("Added " + taskType + ":");
         System.out.println("   " + task.toString());
         System.out.printf((TASK_COUNT_MESSAGE) + "%n", totalTasks);
     }
 
+    /**
+     * Displays confirmation that a task was marked as done or not done.
+     *
+     * @param task   The task that was updated.
+     * @param isDone true if the task was marked done; false if marked undone.
+     */
     public void showTaskMarked(Task task, boolean isDone) {
         String status = isDone ? "Done" : "Undone";
         System.out.println("Marked as " + status + ": " + task.toString());
     }
 
+    /**
+     * Displays an error message corresponding to the given error type code.
+     *
+     * @param errorType The error code string (e.g., "TODO_EMPTY", "INDEX_MISSING").
+     */
     public void showError(String errorType) {
         String message = switch (errorType) {
             case "TODO_EMPTY" -> ERROR_TODO_EMPTY;
@@ -67,13 +92,41 @@ public class UI {
         System.out.println(message);
     }
 
+    /**
+     * Displays confirmation that a task was deleted, along with the updated task count.
+     *
+     * @param task       The task that was removed.
+     * @param totalTasks The new total number of tasks in the list.
+     */
     public void showTaskDeleted(Task task, int totalTasks) {
         System.out.println("Noted. I've removed this task, slacker:");
         System.out.println("   " + task.toString());
         System.out.printf("Now you have %d tasks in the list.%n", totalTasks);
     }
 
+    /**
+     * Displays all tasks in the given list, numbered from 1.
+     *
+     * @param tasks The list of tasks to display.
+     */
     public void showTaskList(ArrayList<Task> tasks) {
+        for (int i = 0; i < tasks.size(); i++) {
+            System.out.println((i + 1) + "." + tasks.get(i).toString());
+        }
+    }
+
+    /**
+     * Displays the results of a find operation.
+     * If no tasks match the keyword, a message indicating this is shown.
+     *
+     * @param tasks The list of matching tasks to display.
+     */
+    public void showFoundTasks(ArrayList<Task> tasks) {
+        if (tasks.isEmpty()) {
+            System.out.println("No matching tasks found.");
+            return;
+        }
+        System.out.println("Here are the matching tasks in your list:");
         for (int i = 0; i < tasks.size(); i++) {
             System.out.println((i + 1) + "." + tasks.get(i).toString());
         }
